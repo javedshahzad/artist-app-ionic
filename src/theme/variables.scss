@@ -74,6 +74,22 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+  --swatch_1: #2a88fc;
+  --swatch_2: #fbfdfe;
+  --swatch_3: #001974;
+  --swatch_4: #1f6bce;
+  --swatch_5: #a6bed1;
+  --swatch_6: #62a8e9;
+  --swatch_7: #626462;
+  --swatch_8: #cc693d;
+  --ion-background-color: var(--swatch_2);
+  --ion-item-background: var(--swatch_2);
+
+  --ion-toolbar-background: var(--swatch_2);
+
+  --ion-tab-bar-background: var(--swatch_2);
+
+  --ion-card-background: var(--swatch_2);
 }
 
 @media (prefers-color-scheme: dark) {

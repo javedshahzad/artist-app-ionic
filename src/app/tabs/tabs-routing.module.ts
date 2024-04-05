@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AddArtistComponent } from '../components/add-artist/add-artist.component';
+import { PrivacyComponent } from '../components/privacy/privacy.component';
+import { UpdateComponent } from '../components/update/update.component';
+import { SearchComponent } from '../components/search/search.component';
 
 const routes: Routes = [
   {
@@ -20,15 +24,31 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path:"add-artist",
+        component:AddArtistComponent
+      },
+      {
+        path:"update-artist/:name",
+        component:UpdateComponent
+      },
+      {
+        path:"privacy",
+        component:PrivacyComponent
+      },
+      {
+        path:"search",
+        component:SearchComponent,
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tab2',
     pathMatch: 'full'
   }
 ];

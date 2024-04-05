@@ -1,13 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-     All Artists
+     Search Artists
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button color="warning" expand="block" class="ion-margin" [routerLink]="['/tabs/search']" ><ion-icon name="search"></ion-icon> Search Artist</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10">
+        <ion-searchbar placeholder="Enter name to search" [(ngModel)]="name" (ionClear)="clear()"></ion-searchbar>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button (click)="search()" style="margin-top: 13px;"><ion-icon name="search"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <br>
         <ion-card *ngFor="let artist of AllArtists">
          <ion-row>

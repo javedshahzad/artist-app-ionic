@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Featured Artists
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let artist of AllFeaturedArtists">
+   <ion-row>
+    <ion-col>
+      <p class="title size-16"><strong>Name:</strong>{{artist.name}}</p>
+      <p class="title size-16"><strong>Artwork type:</strong>{{artist.artwork_type}}</p>
+      <p class="title size-16"><strong>Contact Info:</strong>{{artist.contact_info}}</p>
+      <p class="title size-16"><strong>DOB:</strong>{{artist.dob | date :"medium"}}</p>
+      <p class="title size-16"><strong>Gender:</strong>{{artist.gender}}</p>
+      <p class="title size-16"><strong>Special Notes:</strong>{{artist.special_notes}}</p>
+      <h4 class="featured-artist" *ngIf="artist.is_featured_artist === 1">Featured Artist</h4>
+    </ion-col>
+   </ion-row>
+  </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
+

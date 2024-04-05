@@ -1,28 +1,39 @@
-import { Component } from '@angular/core';
-import { ArtistService } from '../core/artist.service';
-import { Artist } from '../core/models';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ArtistService } from 'src/app/core/artist.service';
+import { Artist } from 'src/app/core/models';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
 })
-export class Tab3Page {
+export class SearchComponent  implements OnInit {
   AllArtists: Artist[]=[];
-
+  name:any=''
   constructor(
     private artistSr:ArtistService,
     private router:Router,
     private alertCtrl:AlertController
   ) {
-    this.getArtists();
+    this.getArtists()
   }
-
+  ngOnInit() {}
   getArtists(){
     this.artistSr.presentLoading();
     this.artistSr.GetAllArtist("ArtGalley").subscribe((response:any)=>{
+      this.AllArtists = response;
+      console.log(this.AllArtists);
+      this.artistSr.dismissLoading();
+    })
+  }
+  clear(){
+    this.getArtists();
+  }
+  search(){
+    this.artistSr.presentLoading();
+    this.artistSr.GetAllArtist(`ArtGalley/${this.name}`).subscribe((response:any)=>{
       this.AllArtists = response;
       console.log(this.AllArtists);
       this.artistSr.dismissLoading();
@@ -42,12 +53,12 @@ export class Tab3Page {
           role: "destructive",
           handler: () => {
             this.artistSr.presentLoading();
-            this.artistSr.DeleteArtist(`ArtGalley/${artist.name}`).subscribe((response:any)=>{
-             console.log(response)
-             if(response.delete == 'Delete Success"'){
-               this.artistSr.presentToast("Artist has been deleted successfully!",true);
-             }
-             this.artistSr.dismissLoading();
+         this.artistSr.DeleteArtist(`ArtGalley/${artist.name}`).subscribe((response:any)=>{
+          console.log(response)
+          if(response.delete == 'Delete Success"'){
+            this.artistSr.presentToast("Artist has been deleted successfully!",true);
+          }
+          this.artistSr.dismissLoading();
          })
           
           }

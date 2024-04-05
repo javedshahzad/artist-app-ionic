@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{"Update Artist"}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <form [formGroup]="ArtistForm">
+      <ion-item>
+        <ion-input label="Artist ID" labelPlacement="stacked" placeholder="Artist ID..." type="number" formControlName="artist_ID"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Name" labelPlacement="stacked" placeholder="Enter name..." type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Contact Info" labelPlacement="stacked" placeholder="Contact info..." type="tel" formControlName="contact_info"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="DOB" labelPlacement="stacked" placeholder="Enter name..." type="date" formControlName="dob"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Gender" labelPlacement="stacked" placeholder="Gender..." formControlName="gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Unspecified">Unspecified</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Artwork type" labelPlacement="stacked" placeholder="Artwork type..." formControlName="artwork_type">
+          <ion-select-option value="painting">Painting</ion-select-option>
+          <ion-select-option value="sculpture">Sculpture</ion-select-option>
+          <ion-select-option value="photograph">Photograph</ion-select-option>
+          <ion-select-option value="video art">Video art</ion-select-option>
+          <ion-select-option value="digital art">Digital art</ion-select-option>
+          <ion-select-option value="printmaking">Printmaking</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Is featured artist" labelPlacement="stacked" placeholder="Is featured artist..." formControlName="is_featured_artist">
+          <ion-select-option value="1">Yes</ion-select-option>
+          <ion-select-option value="0">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Exibition date" labelPlacement="stacked" placeholder="Exibition date..." type="date" formControlName="exibition_date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Special notes" labelPlacement="stacked" placeholder="Special notes..." type="text" formControlName="special_note"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="secondary" (click)="update()">
+       {{"Update Artist"}}
+      </ion-button>
+    </form>
+  </ion-list>
+</ion-content>

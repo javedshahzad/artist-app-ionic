@@ -24,3 +24,40 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+
+.title{
+    margin: 2px;
+}
+.size-16{
+    font-size: 16px;
+}
+.size-14{
+    font-size: 14px;
+}
+
+.size-18{
+    font-size: 18px;
+}
+.featured-artist{
+    background: var(--swatch_3);
+    color: #fff;
+    padding: 7px;
+    font-size: 14px;
+    margin: 4px;
+    width: fit-content;
+    border-radius: 8px;
+}
+.Not-featured-artist{
+    background: var(--ion-color-danger);
+    color: #fff;
+    padding: 7px;
+    margin: 4px;
+    font-size: 14px;
+    width: fit-content;
+    border-radius: 8px;
+}
+.m-30-auto{
+    margin: 30px auto;
+}

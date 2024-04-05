@@ -1,17 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h5 style="color: var(--ion-color-success);">Last updated: {{DATE | date :"medium"}}</h5>
+        <h1 color="primary">Hey there!</h1>
+        <div class="ion-text-center"><ion-icon name="person-circle" class="icon"></ion-icon></div>
+        <h3> <strong>Information</strong></h3>
+        <p>This app is created for artists and their artworks. All  artists can save their data in our database and can update and view it as and when they want. Your privacy is our commitment and never shared with anyone. Have a nice day.
+          <h1 class="text-info">Help</h1>
+          <p>
+            You use our app: <br>
+            Delete: this option is used to delete your record.
+            Insert: this option is used to insert your data into our database.
+            Update: this option is used to update your record in our database. 
+            Display: This option is used to display your record.
+            Search: this option is used to search thr required data from our database. 
+            For more information click our information button/page.    
+        </p>
+          <br>
+          Thanks
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
