@@ -14,9 +14,10 @@ export class Tab1Page {
   constructor(
     private artistSr:ArtistService
   ) {
+  }
+  ionViewDidEnter(){
     this.getArtists();
   }
-
   getArtists(){
     this.artistSr.presentLoading();
     this.artistSr.GetAllArtist("ArtGalley").subscribe((response:any)=>{

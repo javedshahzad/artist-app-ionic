@@ -17,9 +17,11 @@ export class Tab3Page {
     private router:Router,
     private alertCtrl:AlertController
   ) {
+    
+  }
+  ionViewDidEnter(){
     this.getArtists();
   }
-
   getArtists(){
     this.artistSr.presentLoading();
     this.artistSr.GetAllArtist("ArtGalley").subscribe((response:any)=>{

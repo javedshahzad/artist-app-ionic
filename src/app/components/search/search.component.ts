@@ -17,7 +17,9 @@ export class SearchComponent  implements OnInit {
     private router:Router,
     private alertCtrl:AlertController
   ) {
-    this.getArtists()
+  }
+  ionViewDidEnter(){
+    this.getArtists();
   }
   ngOnInit() {}
   getArtists(){

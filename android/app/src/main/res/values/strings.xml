@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Artists</string>
+    <string name="title_activity_main">Artists</string>
+    <string name="package_name">com.artist</string>
+    <string name="custom_url_scheme">com.artist</string>
+</resources>
