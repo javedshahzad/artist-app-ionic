@@ -57,8 +57,9 @@ export class SearchComponent  implements OnInit {
             this.artistSr.presentLoading();
          this.artistSr.DeleteArtist(`ArtGalley/${artist.name}`).subscribe((response:any)=>{
           console.log(response)
-          if(response.delete == 'Delete Success"'){
+          if(response.delete == 'Delete Success'){
             this.artistSr.presentToast("Artist has been deleted successfully!",true);
+            this.getArtists();
           }
           this.artistSr.dismissLoading();
          })
